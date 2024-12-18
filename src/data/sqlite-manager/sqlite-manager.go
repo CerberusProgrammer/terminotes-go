@@ -47,9 +47,9 @@ func CreateTable() error {
 func CreateNote(
 	title string,
 	content string,
-) error {
+) (int, error) {
 	if err := checkSQLite3Installed(); err != nil {
-		return err
+		return 0, err
 	}
 
 	query := fmt.Sprintf(`
@@ -63,11 +63,20 @@ func CreateNote(
 	err := cmd.Run()
 	if err != nil {
 		log.Println("Error creating note:", err)
-		return err
+		return 0, err
 	}
 
-	log.Println("Note created successfully")
-	return nil
+	query = "SELECT id FROM notes ORDER BY id DESC LIMIT 1;"
+	cmd = exec.Command("sqlite3", config.DBPath, query)
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		log.Println("Error getting last insert ID:", err, string(output))
+		return 0, err
+	}
+
+	var id int
+	fmt.Sscanf(strings.TrimSpace(string(output)), "%d", &id)
+	return id, nil
 }
 
 func SelectNotes(columns []string) (string, error) {
