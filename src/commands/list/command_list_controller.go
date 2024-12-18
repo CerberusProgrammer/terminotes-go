@@ -4,7 +4,9 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"strings"
 	sqlitemanager "terminotes/src/data/sqlite-manager"
+	"terminotes/src/utils"
 )
 
 func ListCommand(args []string) {
@@ -39,6 +41,19 @@ func ListCommand(args []string) {
 		log.Fatal(err)
 	}
 
-	fmt.Println("ID | Title | Content | Created At")
-	fmt.Println(notes)
+	printNotes(columns, notes)
+}
+
+func printNotes(columns []string, notes string) {
+	header := utils.FormatHeader(columns)
+	fmt.Println(header)
+	fmt.Println(strings.Repeat("-", len(header)))
+
+	rows := strings.Split(notes, "\n")
+	for _, row := range rows {
+		if row == "" {
+			continue
+		}
+		fmt.Println(utils.FormatRow(row))
+	}
 }
