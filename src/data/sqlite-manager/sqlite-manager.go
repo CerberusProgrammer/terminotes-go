@@ -87,3 +87,21 @@ func SelectNotes(columns []string) (string, error) {
 
 	return string(output), nil
 }
+
+func SelectNoteByID(id int, columns []string) (string, error) {
+	if err := checkSQLite3Installed(); err != nil {
+		return "", err
+	}
+
+	query := fmt.Sprintf("SELECT %s FROM notes WHERE id = %d;", strings.Join(columns, ", "), id)
+
+	cmd := exec.Command("sqlite3", config.DBPath, query)
+
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		log.Println("Error selecting note by ID:", err, string(output))
+		return "", err
+	}
+
+	return string(output), nil
+}
