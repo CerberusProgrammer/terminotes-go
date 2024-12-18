@@ -44,3 +44,10 @@ func PrintTable(columns []string, rows []string) {
 		fmt.Println(FormatRow(row))
 	}
 }
+
+func PrintNote(note string, columns []string) {
+	header := FormatHeader(columns)
+	fmt.Println(header)
+	fmt.Println(strings.Repeat("-", len(header)))
+	fmt.Println(FormatRow(note))
+}
