@@ -19,7 +19,7 @@ const (
 func FormatHeader(columns []string) string {
 	var headerParts []string
 	for _, col := range columns {
-		headerParts = append(headerParts, fmt.Sprintf("%s%s%s", Cyan, strings.ToUpper(col), Reset))
+		headerParts = append(headerParts, fmt.Sprintf("%s%-15s%s", Cyan, strings.ToUpper(col), Reset))
 	}
 	return strings.Join(headerParts, " | ")
 }
@@ -27,7 +27,20 @@ func FormatHeader(columns []string) string {
 func FormatRow(row string) string {
 	parts := strings.Split(row, "|")
 	for i, part := range parts {
-		parts[i] = fmt.Sprintf("%s%s%s", Green, strings.TrimSpace(part), Reset)
+		parts[i] = fmt.Sprintf("%s%-15s%s", Green, strings.TrimSpace(part), Reset)
 	}
 	return strings.Join(parts, " | ")
+}
+
+func PrintTable(columns []string, rows []string) {
+	header := FormatHeader(columns)
+	fmt.Println(header)
+	fmt.Println(strings.Repeat("-", len(header)))
+
+	for _, row := range rows {
+		if row == "" {
+			continue
+		}
+		fmt.Println(FormatRow(row))
+	}
 }
