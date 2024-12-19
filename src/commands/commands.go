@@ -5,6 +5,7 @@ import (
 	"terminotes/src/commands/delete"
 	"terminotes/src/commands/export"
 	"terminotes/src/commands/help"
+	"terminotes/src/commands/importation"
 	"terminotes/src/commands/list"
 	"terminotes/src/commands/search"
 	"terminotes/src/commands/view"
@@ -53,6 +54,11 @@ var commands = []models.Command{
 		Description: "Export notes to a file",
 		Execute:     export.ExportCommand,
 		Error:       "Expected 'export' command",
+	}, {
+		Name:        "import",
+		Description: "Import notes from a file",
+		Execute:     importation.ImportCommand,
+		Error:       "Expected 'import' command",
 	},
 }
 
