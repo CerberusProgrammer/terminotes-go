@@ -150,3 +150,26 @@ func DeleteAllNotes() error {
 
 	return nil
 }
+
+func SearchNotes(query string, columns []string) (string, error) {
+	if err := checkSQLite3Installed(); err != nil {
+		return "", err
+	}
+
+	query = fmt.Sprintf("SELECT %s FROM notes WHERE LOWER(title) LIKE '%%%s%%' OR LOWER(content) LIKE '%%%s%%';",
+		strings.Join(columns, ", "),
+		strings.ToLower(query),
+		strings.ToLower(query),
+	)
+
+	cmd := exec.Command("sqlite3", config.DBPath, query)
+
+	output, err := cmd.CombinedOutput()
+
+	if err != nil {
+		log.Println("Error searching notes:", err, string(output))
+		return "", err
+	}
+
+	return string(output), nil
+}
