@@ -12,34 +12,29 @@ So Terminotes is a simple solution for me, and I hope it will be for you too. A 
 
 ## MVP
 
-- Create notes with a title and content (body) in the terminal
-- List all notes
-- View a note by its title
-- Delete a note by its title
-- Search for notes by title or content
-- Export notes to a JSON file
-- Import notes from a JSON file
-- Configuration file to store the notes file path
-- An option to clear all notes
-- An option to reset the configuration
-- An option to show the configuration
-- An option to show the configuration file path
-- A help message
-- A version message
-- A configuration file
-- Notes storage in SQLite
-- Multiline notes support (Title and content)
-- [Required] A CLI
-- [Optional] Animation when adding, deleting, or viewing a note (I'm not sure about this one)
-- [Optional] A GUI (I'm not sure about this one too)
-- [Future] A book to store notes in different categories
-- [Future] A reminder system
-- [Future] Tags for notes
-- [Future] Connection to a cloud service (Like Firebase) to store notes
-- [Future] Sync notes between devices
-- [Future] Encryption for notes
-- [Future] Password protection for notes
-- [Future] Markdown support
+- [x] Create notes with a title and content (body) in the terminal
+- [x] List all notes
+- [x] View a note by its title
+- [x] Delete a note by its title
+- [x] Search for notes by title or content
+- [x] Export notes to a JSON file
+- [x] Import notes from a JSON file
+- [x] Configuration file to store the notes file path
+- [x] An option to clear all notes
+- [x] A help message
+- [x] Notes storage in SQLite
+- [x] Multiline notes support (Title and content)
+- [x] [Required] A CLI
+- [ ] [Optional] Animation when adding, deleting, or viewing a note (I'm not sure about this one)
+- [ ] [Optional] A GUI (I'm not sure about this one too)
+- [ ] [Future] A book to store notes in different categories
+- [ ] [Future] A reminder system
+- [ ] [Future] Tags for notes
+- [ ] [Future] Connection to a cloud service (Like Firebase) to store notes
+- [ ] [Future] Sync notes between devices
+- [ ] [Future] Encryption for notes
+- [ ] [Future] Password protection for notes
+- [ ] [Future] Markdown support
 
 ## MVP Usage
 
