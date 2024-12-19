@@ -66,7 +66,8 @@ func CreateNote(
 		return 0, err
 	}
 
-	query = "SELECT id FROM notes ORDER BY id DESC LIMIT 1;"
+	// Obtener el ID de la nota recién creada
+	query = "SELECT last_insert_rowid();"
 	cmd = exec.Command("sqlite3", config.DBPath, query)
 	output, err := cmd.CombinedOutput()
 	if err != nil {
@@ -113,4 +114,40 @@ func SelectNoteByID(id int, columns []string) (string, error) {
 	}
 
 	return string(output), nil
+}
+
+func DeleteNoteByID(id int) error {
+	if err := checkSQLite3Installed(); err != nil {
+		return err
+	}
+
+	query := fmt.Sprintf("DELETE FROM notes WHERE id = %d;", id)
+
+	cmd := exec.Command("sqlite3", config.DBPath, query)
+
+	err := cmd.Run()
+	if err != nil {
+		log.Println("Error deleting note by ID:", err)
+		return err
+	}
+
+	return nil
+}
+
+func DeleteAllNotes() error {
+	if err := checkSQLite3Installed(); err != nil {
+		return err
+	}
+
+	query := "DELETE FROM notes;"
+
+	cmd := exec.Command("sqlite3", config.DBPath, query)
+
+	err := cmd.Run()
+	if err != nil {
+		log.Println("Error deleting all notes:", err)
+		return err
+	}
+
+	return nil
 }
