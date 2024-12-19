@@ -57,7 +57,6 @@ So Terminotes is a simple solution for me, and I hope it will be for you too. A 
 - `tn search -q "Query"` to search for notes by title or content
 - `tn help` to show the help message
 - `tn version` to show the version of Terminotes
-- `tn clear` to clear all notes
 - `tn export` to export all notes to a JSON file
 - `tn import` to import notes from a JSON file
 - `tn config` to configure Terminotes
