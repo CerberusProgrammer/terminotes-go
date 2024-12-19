@@ -5,6 +5,7 @@ import (
 	"terminotes/src/commands/delete"
 	"terminotes/src/commands/help"
 	"terminotes/src/commands/list"
+	"terminotes/src/commands/search"
 	"terminotes/src/commands/view"
 	"terminotes/src/models"
 )
@@ -39,6 +40,12 @@ var commands = []models.Command{
 		Description: "Show available commands",
 		Execute:     help.HelpCommand,
 		Error:       "Expected 'help' command",
+	},
+	{
+		Name:        "search",
+		Description: "Search notes by title or content",
+		Execute:     search.SearchCommand,
+		Error:       "Expected 'search' command",
 	},
 }
 
