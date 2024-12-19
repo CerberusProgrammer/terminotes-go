@@ -79,6 +79,31 @@ func CreateNote(
 	return id, nil
 }
 
+func CreateNoteWithoutID(
+	title string,
+	content string,
+) error {
+	if err := checkSQLite3Installed(); err != nil {
+		return err
+	}
+
+	query := fmt.Sprintf(`
+    INSERT INTO notes (title, content) VALUES ('%s', '%s');`,
+		title,
+		content,
+	)
+
+	cmd := exec.Command("sqlite3", config.DBPath, query)
+
+	err := cmd.Run()
+	if err != nil {
+		log.Println("Error creating note:", err)
+		return err
+	}
+
+	return nil
+}
+
 func SelectNotes(columns []string) (string, error) {
 	if err := checkSQLite3Installed(); err != nil {
 		return "", err
@@ -190,4 +215,20 @@ func SelectAllNotes() (string, error) {
 	}
 
 	return string(output), nil
+}
+
+func ExecuteSQL(query string) error {
+	if err := checkSQLite3Installed(); err != nil {
+		return err
+	}
+
+	cmd := exec.Command("sqlite3", config.DBPath, query)
+
+	err := cmd.Run()
+	if err != nil {
+		log.Println("Error executing SQL:", err)
+		return err
+	}
+
+	return nil
 }
