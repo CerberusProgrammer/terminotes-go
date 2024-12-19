@@ -66,7 +66,7 @@ func CreateNote(
 		return 0, err
 	}
 
-	query = "SELECT last_insert_rowid();"
+	query = "SELECT * FROM notes ORDER BY id DESC LIMIT 1;"
 	cmd = exec.Command("sqlite3", config.DBPath, query)
 	output, err := cmd.CombinedOutput()
 	if err != nil {
