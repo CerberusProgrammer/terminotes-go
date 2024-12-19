@@ -3,6 +3,7 @@ package commands
 import (
 	"terminotes/src/commands/add"
 	"terminotes/src/commands/delete"
+	"terminotes/src/commands/export"
 	"terminotes/src/commands/help"
 	"terminotes/src/commands/list"
 	"terminotes/src/commands/search"
@@ -46,6 +47,12 @@ var commands = []models.Command{
 		Description: "Search notes by title or content",
 		Execute:     search.SearchCommand,
 		Error:       "Expected 'search' command",
+	},
+	{
+		Name:        "export",
+		Description: "Export notes to a file",
+		Execute:     export.ExportCommand,
+		Error:       "Expected 'export' command",
 	},
 }
 
