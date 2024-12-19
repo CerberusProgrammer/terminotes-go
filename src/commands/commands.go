@@ -2,6 +2,7 @@ package commands
 
 import (
 	"terminotes/src/commands/add"
+	"terminotes/src/commands/delete"
 	"terminotes/src/commands/list"
 	"terminotes/src/commands/view"
 	"terminotes/src/models"
@@ -25,5 +26,11 @@ var commands = []models.Command{
 		Description: "View a note by ID",
 		Execute:     view.ViewCommand,
 		Error:       "Expected 'view' command",
+	},
+	{
+		Name:        "delete",
+		Description: "Delete a note by ID or all notes",
+		Execute:     delete.DeleteCommand,
+		Error:       "Expected 'delete' command",
 	},
 }
