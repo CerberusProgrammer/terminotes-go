@@ -66,7 +66,6 @@ func CreateNote(
 		return 0, err
 	}
 
-	// Obtener el ID de la nota recién creada
 	query = "SELECT last_insert_rowid();"
 	cmd = exec.Command("sqlite3", config.DBPath, query)
 	output, err := cmd.CombinedOutput()
