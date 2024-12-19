@@ -173,3 +173,21 @@ func SearchNotes(query string, columns []string) (string, error) {
 
 	return string(output), nil
 }
+
+func SelectAllNotes() (string, error) {
+	if err := checkSQLite3Installed(); err != nil {
+		return "", err
+	}
+
+	query := "SELECT id, title, content, created_at FROM notes;"
+
+	cmd := exec.Command("sqlite3", config.DBPath, query)
+
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		log.Println("Error selecting all notes:", err, string(output))
+		return "", err
+	}
+
+	return string(output), nil
+}
