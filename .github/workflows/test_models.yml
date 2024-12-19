@@ -1,4 +1,4 @@
-name: Go
+name: Test to check the functionality of the models
 
 on:
   push:
