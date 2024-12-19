@@ -36,11 +36,10 @@ func CreateTable() error {
 		return err
 	}
 
-	if string(output) == "" {
-		log.Println("Table already exists")
-	} else {
-		log.Println("Table created successfully")
+	if string(output) != "" {
+		log.Println("Theresn't any database before, so I created a new one ;)")
 	}
+
 	return nil
 }
 
