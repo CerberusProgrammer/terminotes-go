@@ -43,23 +43,18 @@ So Terminotes is a simple solution for me, and I hope it will be for you too. A 
 
 ## MVP Usage
 
-- `tn add` to add a note with only content (The title will be the first line of the content)
-- `tn add -t "Title"` to add a note with a title and no content
-- `tn add -c "Content"` to add a note with no title and only content
-- `tn add -t "Title" -c "Content"` to add a note with a title and content
-- `tn add -m` to add a note with a multiline content (The title will be the first line of the content) (The content will be added line by line until you type `[end]` in a new line)
-- `tn add -t "Title" -m` to add a note with a title and multiline content (The content will be added line by line until you type `[end]` in a new line)
-- `tn add -c "Content" -m` to add a note with no title and multiline content (The content will be added line by line until you type `[end]` in a new line)
-- `tn add -t "Title" -c "Content" -m` to add a note with a title, content, and multiline content (The content will be added line by line until you type `[end]` in a new line)
-- `tn list` to list all notes
-- `tn view -id {id}` to view a note by its title
-- `tn delete -id {id}` to delete a note by its title (A cursor selection will be shown to select the note if there are multiple notes with the same title)
-- `tn search -q "Query"` to search for notes by title or content
-- `tn help` to show the help message
-- `tn version` to show the version of Terminotes
-- `tn export` to export all notes to a JSON file
-- `tn import` to import notes from a JSON file
-- `tn config` to configure Terminotes
-- `tn config -r` to reset the configuration
-- `tn config -l` to show the configuration
-- `tn config -s` to show the configuration file path
+- [x] `tn add` to add a note with only content (The title will be the first line of the content)
+- [x] `tn add -t "Title"` to add a note with a title and no content
+- [x] `tn add -c "Content"` to add a note with no title and only content
+- [x] `tn add -t "Title" -c "Content"` to add a note with a title and content
+- [x] `tn add -m` to add a note with a multiline content (The title will be the first line of the content) (The content will be added line by line until you type `[end]` in a new line)
+- [x] `tn add -t "Title" -m` to add a note with a title and multiline content (The content will be added line by line until you type `[end]` in a new line)
+- [x] `tn add -c "Content" -m` to add a note with no title and multiline content (The content will be added line by line until you type `[end]` in a new line)
+- [x] `tn add -t "Title" -c "Content" -m` to add a note with a title, content, and multiline content (The content will be added line by line until you type `[end]` in a new line)
+- [x] `tn list` to list all notes
+- [x] `tn view -id {id}` to view a note by its title
+- [x] `tn delete -id {id}` to delete a note by its title (A cursor selection will be shown to select the note if there are multiple notes with the same title)
+- [x] `tn search -q "Query"` to search for notes by title or content
+- [x] `tn help` to show the help message
+- [x] `tn export` to export all notes to a JSON file
+- [x] `tn import` to import notes from a JSON file
