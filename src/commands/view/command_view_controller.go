@@ -47,5 +47,10 @@ func ViewCommand(args []string) {
 		log.Fatal(err)
 	}
 
+	if note == "" {
+		fmt.Printf("Note with ID %d not found\n", *id)
+		return
+	}
+
 	utils.PrintNote(note, columns)
 }
