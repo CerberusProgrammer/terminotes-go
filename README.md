@@ -2,6 +2,8 @@
 
 Terminotes is a simple note-taking application that runs in the terminal.
 
+(Want to watch the cool website? (Go here)[https://terminotes.netlify.app/])
+
 ## Why Terminotes?
 
 I'm full against the idea of using a note-taking application that requires me to create an account or sign in. I don't want my notes to be stored on a server somewhere. I want them to be stored locally on my machine. That's why I created Terminotes. It's a simple note-taking application that runs in the terminal and stores notes locally on your machine. No need to create an account or sign in.
