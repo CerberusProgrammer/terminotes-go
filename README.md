@@ -2,7 +2,7 @@
 
 Terminotes is a simple note-taking application that runs in the terminal.
 
-(Want to watch the cool website? (Go here)[https://terminotes.netlify.app/])
+(Want to watch the cool website? [Go here](https://terminotes.netlify.app/)
 
 ## Why Terminotes?
 
