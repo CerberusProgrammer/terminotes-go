@@ -2,6 +2,8 @@
 
 Terminotes is a simple note-taking application that runs in the terminal.
 
+(Want to watch the cool website? [Go here](https://terminotes.netlify.app/)
+
 ## Why Terminotes?
 
 I'm full against the idea of using a note-taking application that requires me to create an account or sign in. I don't want my notes to be stored on a server somewhere. I want them to be stored locally on my machine. That's why I created Terminotes. It's a simple note-taking application that runs in the terminal and stores notes locally on your machine. No need to create an account or sign in.
@@ -9,6 +11,25 @@ I'm full against the idea of using a note-taking application that requires me to
 Also I code on my tablet or phone, and my keyboard is connected, and I need to add a super fast note without opening a browser or an app that requires a lot of resources (And time to open).
 
 So Terminotes is a simple solution for me, and I hope it will be for you too. A very simple terminal app but with the idea of being fast and easy to use.
+
+## Instalation
+
+### Windows
+
+Download the latest release from the [releases page](https://github.com/CerberusProgrammer/terminotes-go/releases) and unzip it, then run the installer.
+
+### Custom build
+
+#### Custom build in Windows
+
+```bash
+go build -o terminotes.exe ./src/main.go
+mv terminotes.exe ../package
+cd package
+Compress-Archive -Path terminotes.exe, install.bat, uninstall.bat -DestinationPath terminotes_installer.zip
+```
+
+Once you have the `terminotes_installer.zip` file, you can do whatever you want with it.
 
 ## MVP
 
@@ -25,6 +46,7 @@ So Terminotes is a simple solution for me, and I hope it will be for you too. A 
 - [x] Notes storage in SQLite
 - [x] Multiline notes support (Title and content)
 - [x] [Required] A CLI
+- [ ] [Required] An easy Windows installer
 - [ ] [Optional] Animation when adding, deleting, or viewing a note (I'm not sure about this one)
 - [ ] [Optional] A GUI (I'm not sure about this one too)
 - [ ] [Future] A book to store notes in different categories
