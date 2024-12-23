@@ -2,6 +2,7 @@ package commands
 
 import (
 	"terminotes/src/commands/add"
+	"terminotes/src/commands/curiosities"
 	"terminotes/src/commands/delete"
 	"terminotes/src/commands/export"
 	"terminotes/src/commands/help"
@@ -59,6 +60,12 @@ var commands = []models.Command{
 		Description: "Import notes from a file",
 		Execute:     importation.ImportCommand,
 		Error:       "Expected 'import' command",
+	},
+	{
+		Name:        "haiku",
+		Description: "Show a haiku",
+		Execute:     curiosities.HaikuCommand,
+		Error:       "Expected 'haiku' command",
 	},
 }
 
