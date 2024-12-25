@@ -67,6 +67,12 @@ var commands = []models.Command{
 		Execute:     curiosities.HaikuCommand,
 		Error:       "Expected 'haiku' command",
 	},
+	{
+		Name:        "logo",
+		Description: "Show the logo",
+		Execute:     curiosities.LogoCommand,
+		Error:       "Expected 'logo' command",
+	},
 }
 
 func GetCommands() []models.Command {
