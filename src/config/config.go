@@ -1,5 +1,5 @@
 package config
 
 const (
-	DBPath = "./terminotes.db"
+	DBPath = "./terminotes.json"
 )
