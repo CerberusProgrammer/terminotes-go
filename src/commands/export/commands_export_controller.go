@@ -7,7 +7,7 @@ import (
 	"log"
 	"os"
 	"strings"
-	sqlitemanager "terminotes/src/data/sqlite-manager"
+	jsonmanager "terminotes/src/data/json-manager"
 )
 
 func ExportCommand(args []string) {
@@ -22,7 +22,7 @@ func ExportCommand(args []string) {
 		return
 	}
 
-	notes, err := sqlitemanager.SelectAllNotes()
+	notes, err := jsonmanager.SelectAllNotes()
 	if err != nil {
 		log.Fatal(err)
 	}

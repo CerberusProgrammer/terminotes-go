@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	sqlitemanager "terminotes/src/data/sqlite-manager"
+	jsonmanager "terminotes/src/data/json-manager"
 	"terminotes/src/utils"
 )
 
@@ -42,7 +42,7 @@ func ViewCommand(args []string) {
 		columns = []string{"id", "title", "content", "created_at"}
 	}
 
-	note, err := sqlitemanager.SelectNoteByID(*id, columns)
+	note, err := jsonmanager.SelectNoteByID(*id, columns)
 	if err != nil {
 		log.Fatal(err)
 	}

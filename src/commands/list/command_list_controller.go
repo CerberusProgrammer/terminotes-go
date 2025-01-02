@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 	"strings"
-	sqlitemanager "terminotes/src/data/sqlite-manager"
+	jsonmanager "terminotes/src/data/json-manager"
 	"terminotes/src/utils"
 )
 
@@ -36,7 +36,7 @@ func ListCommand(args []string) {
 		columns = []string{"id", "title", "content", "created_at"}
 	}
 
-	notes, err := sqlitemanager.SelectNotes(columns)
+	notes, err := jsonmanager.SelectNotes(columns)
 	if err != nil {
 		log.Fatal(err)
 	}

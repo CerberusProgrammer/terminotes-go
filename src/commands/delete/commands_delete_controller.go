@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	sqlitemanager "terminotes/src/data/sqlite-manager"
+	jsonmanager "terminotes/src/data/json-manager"
 )
 
 func DeleteCommand(args []string) {
@@ -15,7 +15,7 @@ func DeleteCommand(args []string) {
 	deleteCmd.Parse(args)
 
 	if *all {
-		err := sqlitemanager.DeleteAllNotes()
+		err := jsonmanager.DeleteAllNotes()
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -29,7 +29,7 @@ func DeleteCommand(args []string) {
 		return
 	}
 
-	err := sqlitemanager.DeleteNoteByID(*id)
+	err := jsonmanager.DeleteNoteByID(*id)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 	"strings"
-	sqlitemanager "terminotes/src/data/sqlite-manager"
+	jsonmanager "terminotes/src/data/json-manager"
 	"terminotes/src/utils"
 )
 
@@ -43,7 +43,7 @@ func SearchCommand(args []string) {
 		columns = []string{"id", "title", "content", "created_at"}
 	}
 
-	results, err := sqlitemanager.SearchNotes(*query, columns)
+	results, err := jsonmanager.SearchNotes(*query, columns)
 	if err != nil {
 		log.Fatal(err)
 	}

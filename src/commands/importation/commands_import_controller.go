@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"strings"
-	sqlitemanager "terminotes/src/data/sqlite-manager"
+	jsonmanager "terminotes/src/data/json-manager"
 )
 
 func ImportCommand(args []string) {
@@ -47,7 +47,7 @@ func importFromSQL(data string) {
 		if query == "" {
 			continue
 		}
-		err := sqlitemanager.ExecuteSQL(query)
+		err := jsonmanager.ExecuteSQL(query)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -65,7 +65,7 @@ func importFromJSON(data []byte) {
 	for _, note := range notes {
 		title, _ := note["title"].(string)
 		content, _ := note["content"].(string)
-		err := sqlitemanager.CreateNoteWithoutID(title, content)
+		err := jsonmanager.CreateNoteWithoutID(title, content)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -86,7 +86,7 @@ func importFromTXT(data string) {
 		}
 		title := parts[1]
 		content := parts[2]
-		err := sqlitemanager.CreateNoteWithoutID(title, content)
+		err := jsonmanager.CreateNoteWithoutID(title, content)
 		if err != nil {
 			log.Fatal(err)
 		}
