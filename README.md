@@ -43,7 +43,7 @@ Once you have the `terminotes_installer.zip` file, you can do whatever you want 
 - [x] Configuration file to store the notes file path
 - [x] An option to clear all notes
 - [x] A help message
-- [x] Notes storage in SQLite
+- [x] Notes storage in SQLite # <-- Issue: Using os.execute.
 - [x] Multiline notes support (Title and content)
 - [x] [Required] A CLI
 - [ ] [Required] An easy Windows installer
@@ -52,7 +52,7 @@ Once you have the `terminotes_installer.zip` file, you can do whatever you want 
 - [ ] [Future] A book to store notes in different categories
 - [ ] [Future] A reminder system
 - [ ] [Future] Tags for notes
-- [ ] [Future] Connection to a cloud service (Like Firebase) to store notes
+- [ ] [Future/Optional] Connection to a cloud service (Like Firebase) to store notes
 - [ ] [Future] Sync notes between devices
 - [ ] [Future] Encryption for notes
 - [ ] [Future] Password protection for notes
