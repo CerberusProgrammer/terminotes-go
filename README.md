@@ -43,7 +43,7 @@ Once you have the `terminotes_installer.zip` file, you can do whatever you want 
 - [x] Configuration file to store the notes file path
 - [x] An option to clear all notes
 - [x] A help message
-- [x] Notes storage in SQLite # <-- Issue: Using os.execute.
+- [x] Notes storage in JSON!
 - [x] Multiline notes support (Title and content)
 - [x] [Required] A CLI
 - [ ] [Required] An easy Windows installer
