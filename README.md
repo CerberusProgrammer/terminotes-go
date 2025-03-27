@@ -1,5 +1,7 @@
 # Terminotes
 
+![image](https://github.com/user-attachments/assets/e08d7dba-d7e9-4668-99c5-1795a0113221)
+
 Terminotes is a simple note-taking application that runs in the terminal.
 
 (Want to watch the cool website? [Go here](https://terminotes.netlify.app/)
